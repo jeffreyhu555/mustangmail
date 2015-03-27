@@ -1,23 +1,32 @@
-@import 'vars';
-@import 'mixins';
+@import '../vars';
+@import '../mixins';
 
 /*
-	Landed by HTML5 UP
+	Photon by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-$color-border: mix($color-bg, $color-fg-bold, 70);
-$color-border-bg: mix($color-bg, $color-fg-bold, 90);
+// Vars
+
+	$color-border:				#ccc;
+	$color-border-bg:			transparent;
+	$color-border2:				#ccc;
+	$color-border2-bg:			transparent;
+
+	$color-dark-bg:				#666666;
+	$color-dark-fg-bold:		#ffffff;
+	$color-dark-fg:				#ffffff;
+	$color-dark-fg-light:		#ffffff;
+	$color-dark-border:			#ffffff;
+	$color-dark-border-bg:		transparent;
+	$color-dark-border2:		#ffffff;
+	$color-dark-border2-bg:		transparent;
 
 /* Basic */
 
-	body {
-		color: $color-fg-bold;
-	}
-
-	body, html, #skel-layers-wrapper {
-		height: 100%;
+	hr {
+		border-bottom: solid 1px $color-border;
 	}
 
 	blockquote {
@@ -25,34 +34,16 @@ $color-border-bg: mix($color-bg, $color-fg-bold, 90);
 	}
 
 	code {
-		background: $color-border-bg;
+		border: solid 1px $color-border;
 	}
 
-	hr {
-		border-bottom: solid 1px $color-border;
-	}
+/* Section/Article */
 
-/* Icon */
-
-	.icon {
+	header {
 		&.major {
-			-ms-behavior: url('css/ie/PIE.htc');
-		}
-	}
-
-/* Image */
-
-	.image {
-		position: relative;
-		-ms-behavior: url('css/ie/PIE.htc');
-
-		&:before {
-			display: none;
-		}
-
-		img {
-			position: relative;
-			-ms-behavior: url('css/ie/PIE.htc');
+			&:after {
+				background: $color-border;
+			}
 		}
 	}
 
@@ -63,26 +54,27 @@ $color-border-bg: mix($color-bg, $color-fg-bold, 90);
 	input[type="email"],
 	select,
 	textarea {
-		position: relative;
 		-ms-behavior: url('css/ie/PIE.htc');
+		border: solid 1px $color-border;
+		position: relative;
+	}
 
-		&:focus {
-			-ms-behavior: url('css/ie/PIE.htc');
+/* List */
+
+	ul {
+		&.alt {
+			li {
+				border-top: solid 1px $color-border;
+			}
 		}
-	}
 
-	input[type="text"],
-	input[type="password"],
-	input[type="email"] {
-		line-height: $size-element-height;
-	}
-
-	input[type="checkbox"],
-	input[type="radio"] {
-		font-size: 3em;
-		& + label {
-			&:before {
-				display: none;
+		&.major-icons {
+			li {
+				.icon {
+					-ms-behavior: url('css/ie/PIE.htc');
+					border: solid 1px $color-border;
+					position: relative;
+				}
 			}
 		}
 	}
@@ -90,12 +82,6 @@ $color-border-bg: mix($color-bg, $color-fg-bold, 90);
 /* Table */
 
 	table {
-		tbody {
-			tr {
-				border: solid 1px $color-border;
-			}
-		}
-
 		thead {
 			border-bottom: solid 1px $color-border;
 		}
@@ -109,6 +95,8 @@ $color-border-bg: mix($color-bg, $color-fg-bold, 90);
 				tr {
 					td {
 						border: solid 1px $color-border;
+						border-left-width: 0;
+						border-top-width: 0;
 					}
 				}
 			}
@@ -120,75 +108,126 @@ $color-border-bg: mix($color-bg, $color-fg-bold, 90);
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
+	button,
 	.button {
-		border: solid 1px $color-fg-bold !important;
+		-ms-behavior: url('css/ie/PIE.htc');
+		border: solid 1px $color-border;
+		position: relative;
+	}
 
-		&.special {
-			border: 0 !important;
+/* Image */
+
+	.image {
+		-ms-behavior: url('css/ie/PIE.htc');
+
+		img {
+			-ms-behavior: url('css/ie/PIE.htc');
+			position: relative;
 		}
 	}
 
-/* Goto Next */
+// Dark (mixin)
 
-	.goto-next {
-		display: none;
-	}
+	@mixin dark($color-this-bg: $color-dark-bg) {
+		background-color: $color-this-bg;
+		color: $color-dark-fg;
 
-/* Spotlight */
+		a {
+			border-bottom-color: $color-dark-fg;
 
-	.spotlight {
-		height: 100%;
-
-		.content {
-			background: $color-accent2-bg;
+			&:hover {
+				color: $color-dark-fg-bold;
+			}
 		}
-	}
 
-/* Wrapper */
+		h1, h2, h3, h4, h5, h6, strong, b {
+			color: $color-dark-fg-bold;
+		}
 
-	.wrapper {
-		&.style2 {
-			input[type="text"],
-			input[type="password"],
-			input[type="email"],
-			select,
-			textarea {
-				&:focus {
-					border-color: $color-fg-bold;
-				}
+		header {
+			p {
+				color: $color-dark-fg-bold;
 			}
 
-			input[type="submit"],
-			input[type="reset"],
-			input[type="button"],
-			.button {
-				&.special {
-					&:hover, &:active {
-						color: $color-accent1-bg !important;
+			&.major {
+				&:after {
+					background: $color-dark-border;
+				}
+			}
+		}
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		button,
+		.button {
+			border: solid 1px $color-dark-border !important;
+			color: $color-dark-fg-bold !important;
+
+			&:hover {
+				background-color: $color-dark-border-bg;
+			}
+
+			&:active {
+				background-color: $color-dark-border2-bg;
+			}
+
+			&.special {
+				background-color: $color-dark-fg-bold;
+				border: solid 1px $color-dark-border !important;
+				color: $color-this-bg !important;
+
+				&:hover {
+					background-color: $color-dark-border-bg !important;
+					color: $color-dark-fg-bold !important;
+				}
+
+				&:active {
+					background-color: $color-dark-border2-bg !important;
+				}
+			}
+		}
+
+		ul {
+			&.major-icons {
+				li {
+					.icon {
+						border-color: $color-dark-border;
 					}
 				}
 			}
 		}
-	}
 
-/* Dropotron */
-
-	.dropotron {
-		background: $color-accent2-bg;
-		box-shadow: none !important;
-		-ms-behavior: url('css/ie/PIE.htc');
-
-		> li {
-			a, span {
-				color: $color-fg-bold !important;
+		.icon {
+			&.major {
+				color: $color-dark-fg-bold;
 			}
 		}
+	}
 
-		&.level-0 {
-			margin-top: 0;
+/* Main */
+
+	.main {
+		&.style2 {
+			@include dark(#333);
+			-ms-behavior: url('css/ie/backgroundsize.min.htc');
+			background-image: url('../../images/header.jpg');
+			background-size: cover;
+			position: relative;
 
 			&:before {
-				display: none;
+				background-image: url('../images/overlay1.png');
+				content: '';
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+
+			> * {
+				position: relative;
+				z-index: 1;
 			}
 		}
 	}
@@ -196,19 +235,11 @@ $color-border-bg: mix($color-bg, $color-fg-bold, 90);
 /* Header */
 
 	#header {
-		background: $color-accent2-bg;
+		@include dark(#4686a0);
 	}
 
-/* Banner */
+/* Footer */
 
-	#banner {
-		height: 100%;
-
-		&:before {
-			height: 100%;
-		}
-
-		&:after {
-			background-image: url('images/banner-overlay.png');
-		}
+	#footer {
+		@include dark(#4686a0);
 	}

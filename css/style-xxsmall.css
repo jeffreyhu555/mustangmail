@@ -6,12 +6,24 @@
 
 /* Basic */
 
-	body, input, select, textarea {
-		font-size: 14pt;
+	html, body {
+		min-width: 320px;
+	}
+
+/* Main */
+
+	.main {
+		padding: 2em 1em 0.1em 1em;
 	}
 
 /* Header */
 
 	#header {
-		padding: 6em 0 6em 0;
+		padding: 3em 1em 3em 1em;
+	}
+
+/* Footer */
+
+	#footer {
+		padding: 2em 1em 2em 1em;
 	}

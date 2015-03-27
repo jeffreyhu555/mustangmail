@@ -1,5 +1,5 @@
 /*
-	Landed by HTML5 UP
+	Photon by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -7,44 +7,49 @@
 /* Basic */
 
 	body, input, select, textarea {
-		font-size: 11.5pt;
+		font-size: 13pt;
 	}
 
-/* Spotlight */
-
-	.spotlight.top .content {
-		padding: 3.825em 0 1.825em 0;
+	h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
+		display: none;
 	}
 
-	.spotlight.bottom .content {
-		padding: 3.825em 0 2.95em 0;
+/* List */
+
+	ul.major-icons li {
+		padding: 2em;
 	}
 
-	.spotlight.left .content, .spotlight.right .content {
-		padding: 4.5em 2.5em;
-		width: 25em;
+		ul.major-icons li .icon {
+			height: 8em;
+			line-height: 8em;
+			width: 8em;
+		}
+
+/* Main */
+
+	.main {
+		padding: 4em 0 2em 0;
 	}
 
-/* Wrapper */
+		.main.style2 {
+			background-attachment: scroll;
+		}
 
-	.wrapper {
-		padding: 4.5em 0 2.5em 0;
+/* Header */
+
+	#header {
+		padding: 5em 0 5em 0;
+		background-attachment: scroll;
 	}
 
-/* Dropotron */
-
-	.dropotron.level-0 {
-		font-size: 1em;
-	}
-
-/* Banner */
-
-	#banner .content {
-		padding: 4.5em;
-	}
+		#header br {
+			display: inline;
+		}
 
 /* Footer */
 
 	#footer {
-		padding: 4.5em 0;
+		padding: 4em 0 4em 0;
+		background-attachment: scroll;
 	}
