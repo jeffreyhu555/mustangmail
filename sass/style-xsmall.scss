@@ -2,10 +2,23 @@
 @import 'mixins';
 
 /*
-	Photon by HTML5 UP
+	Landed by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
+$size-wrapper-pad-tb: 3em;
+$size-wrapper-pad-lr: 1.25em;
+
+/* Basic */
+
+	html, body {
+		min-width: 320px;
+	}
+
+	body, input, select, textarea {
+		font-size: 12pt;
+	}
 
 /* List */
 
@@ -26,12 +39,6 @@
 				> * {
 					margin: 0 !important;
 					width: 100%;
-
-					&.icon {
-						&:before {
-							margin-left: -2em;
-						}
-					}
 				}
 			}
 
@@ -56,39 +63,45 @@
 		padding: 0;
 	}
 
-/* Main */
+/* Spotlight */
 
-	.main {
-		@include padding(2em, 1.5em);
+	.spotlight {
+		.image.main {
+			max-height: 50vh;
+		}
+
+		.content {
+			padding: $size-wrapper-pad-tb $size-wrapper-pad-lr ($size-wrapper-pad-tb - $size-element-margin) $size-wrapper-pad-lr !important;
+		}
 	}
 
-/* Header */
+/* Wrapper */
 
-	#header {
-		@include padding(4em, 2em, (0,0,$size-element-margin,0));
+	.wrapper {
+		padding: $size-wrapper-pad-tb $size-wrapper-pad-lr ($size-wrapper-pad-tb - $size-element-margin) $size-wrapper-pad-lr;
+	}
 
-		br {
-			display: none;
+/* Banner */
+
+	#banner {
+		.content {
+			padding: $size-wrapper-pad-tb ($size-wrapper-pad-lr * 1.25) ($size-wrapper-pad-tb * 1.75) ($size-wrapper-pad-lr * 1.25);
 		}
 	}
 
 /* Footer */
 
 	#footer {
-		@include padding(2em, 1.5em, (0,0,$size-element-margin,0));
+		padding: $size-wrapper-pad-tb $size-wrapper-pad-lr;
 
 		.copyright {
-			margin: ($size-element-margin * 0.75) 0 0 0;
+			line-height: inherit;
 
 			li {
-				border: 0;
+				border-left: 0;
 				display: block;
-				margin: 1em 0 0 0;
+				margin: 0;
 				padding: 0;
-
-				&:first-child {
-					margin-top: 0;
-				}
 			}
 		}
 	}
